@@ -1,0 +1,18 @@
+.wrapper {
+    padding-left: 5;
+}
+.side-bar{
+    padding-left: 5;
+}
+.side-bar-content{
+    background:#c1c1c1;
+    padding-left: 0%;
+}
+.display-btn{
+    margin-left: 50%;
+}
+.hint{
+    font-size: x-small;
+    color: blue;
+    text-align: center;
+}

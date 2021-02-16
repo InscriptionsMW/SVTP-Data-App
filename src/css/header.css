@@ -1,0 +1,31 @@
+/* .navbar {
+    display: block;
+    background: #28AF62;
+    position: fixed; 
+    width: 100%;
+    /* padding-bottom: 0.05%; 
+} 
+*/
+/*
+.navbar {
+    background: #28AF62;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: .0rem 0rem !important; 
+    width: 100%;
+}
+.navbar a {
+    color: #a7b9ce;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;  
+}
+.appname{
+    font-size: 1.5rem;
+    margin-right: 40%;
+    font: bold;
+    color: #fff;
+}*/

@@ -1,0 +1,31 @@
+footer {
+    background: #28AF62;
+    /* position: fixed;  */
+    bottom: 0;
+    width: 100%;
+}
+.page-footer{
+    text-align: center;
+}
+.footer-copyright a:hover {
+    color: #e4ebf3;
+    text-decoration: none;
+}
+.footer-copyright a {
+    color: #a7b9ce;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+.pb-3, .py-3 {
+    padding-bottom: 0rem!important;
+}
+.pt-3, .py-3 {
+    padding-top: 0rem!important;
+}
+.pb-3, .py-3 {
+    padding-bottom: 0rem !important;
+}
+.pt-3, .py-3 {
+    padding-top: 0rem !important;
+}
