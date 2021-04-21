@@ -3,7 +3,6 @@ import 'react-notifications/lib/notifications.css';
 import {NotificationManager} from 'react-notifications';
 import Api from '../dhis/api'
 import CommonFunctions from '../functions/CommonFunctions'
-import loading from '../img/loading.gif'
 import Content from "./Layout/Content";
 import {FaArrowCircleRight, FaArrowLeft, FaBookmark, FaPlus, FaSave} from "react-icons/fa";
 import Spinner from "./Utilities/Spinner";

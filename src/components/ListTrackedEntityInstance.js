@@ -66,6 +66,7 @@ class ListTrackedEntityInstance extends Component{
         let programs = JSON.parse(sessionStorage.getItem('programs'))
         this.setState({previouslyLoadedPrograms : [...programs]})
         let selectedProgram = programs.filter((item)=>(item.id === this.state.programId))[0]
+        console.log(selectedProgram)
         if (selectedProgram)
             this.setState({selectedProgram})
     }

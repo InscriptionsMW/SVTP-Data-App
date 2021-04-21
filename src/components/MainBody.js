@@ -33,6 +33,7 @@ class MainBody extends Component{
         this.setState({loadingPrograms:true} )
         let orgUnit = await Api.getOrganisationUnit(e[0])
         let custom = await Api.getCustomPrograms()
+        console.log(custom)
         let ouSelected =false
         if(orgUnit){
             ouSelected =true

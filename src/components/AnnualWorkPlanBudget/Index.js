@@ -62,36 +62,36 @@ class Index extends Component{
 
         let components = _.chain(trackedEntityInstances.trackedEntityInstances)
             .groupBy((item)=> {
-                return _.find(item.attributes,['attribute', "qsbfO1A8Dvk"]).value.split('.')[0]
+                return _.find(item.attributes,['attribute', "XRgRDpeGdvj"]).value.split('.')[0]
             })
             .toPairs()
             .map(pair => _.zipObject(['name', 'data'], pair))
             .map(item => {
-                let displayName = _.find(item.data[0].attributes,['attribute', "qsbfO1A8Dvk"]).value
+                let displayName = _.find(item.data[0].attributes,['attribute', "XRgRDpeGdvj"]).value
                 return {name : item.name, id: item.name.split('.')[0], count: item.data.length, displayName}
             })
             .value();
 
         let subComponents = _.chain(trackedEntityInstances.trackedEntityInstances)
             .groupBy((item)=> {
-                return _.find(item.attributes,['attribute', "muxUIYNH02G"]).value.split(' ')[0]
+                return _.find(item.attributes,['attribute', "B3nn1X42fMS"]).value.split(' ')[0]
             })
             .toPairs()
             .map(pair => _.zipObject(['name', 'data'], pair))
             .map(item => {
-                let displayName = _.find(item.data[0].attributes,['attribute', "muxUIYNH02G"]).value
+                let displayName = _.find(item.data[0].attributes,['attribute', "B3nn1X42fMS"]).value
                 return {name : item.name, component : item.name.split('.')[0], id : item.name, count: item.data.length, displayName}
             })
             .value();
 
         let activities = _.chain(trackedEntityInstances.trackedEntityInstances)
             .groupBy((item)=> {
-                return _.find(item.attributes,['attribute', "JPE7YnmzsL2"]).value.split(' ')[0]
+                return _.find(item.attributes,['attribute', "uHTPyDNqXRg"]).value.split(' ')[0]
             })
             .toPairs()
             .map(pair => _.zipObject(['name', 'data'], pair))
             .map(item => {
-                let displayName = _.find(item.data[0].attributes,['attribute', "JPE7YnmzsL2"]).value
+                let displayName = _.find(item.data[0].attributes,['attribute', "uHTPyDNqXRg"]).value
                 return {name : item.name, subComponent : item.name.split('.')[0]+"."+item.name.split('.')[1], id : item.name, data : item.data, displayName}
             })
             .value();
@@ -101,9 +101,9 @@ class Index extends Component{
             component.subComponents = tempSubComp.map((subComponent,j) => {
                 let tempActivities = activities.filter(itemJ => itemJ.subComponent === subComponent.id)
                 subComponent.activities = tempActivities.map((activity,k) => {
-                    activity.data =  _.sortBy(activity.data,obj => {
+                    /*activity.data =  _.sortBy(activity.data,obj => {
                         return _.find(obj.attributes,['attribute',"KrBo3cCP87C"]).value
-                    })
+                    })*/
                     activity.data = activity.data.map((obj) => {
                         return this.getTableRowValues(obj)
                     })
@@ -152,31 +152,18 @@ class Index extends Component{
         let events  = _.find(this.state.events, ['trackedEntityInstance', trackedEntityInstance.trackedEntityInstance]).events
 
         return  {
-            code: _.find(trackedEntityInstance.attributes,['attribute',"KrBo3cCP87C"]).value,
-            name: _.find(trackedEntityInstance.attributes,['attribute',"cwCu0GzPD9Y"]).value,
-            responsibility: this.getValueWhereProgramStageDataElement(events,"YPLRfFjwleq","cMHLsWbNte2") +', '+this.getValueWhereProgramStageDataElement(events,"YPLRfFjwleq","EtlxDGsnlnE"),
-            july: this.getValueWhereProgramStageDataElement(events,"HKCpLpp7GTW","CrKAwUoKhCa"),
-            august: this.getValueWhereProgramStageDataElement(events,"HKCpLpp7GTW","SOpYa4nIjuJ"),
-            september: this.getValueWhereProgramStageDataElement(events,"HKCpLpp7GTW","tFjYta6n8Yc"),
-            october: this.getValueWhereProgramStageDataElement(events,"HKCpLpp7GTW","G1QOusK9o08"),
-            november: this.getValueWhereProgramStageDataElement(events,"HKCpLpp7GTW","pAdw0tlzjBV"),
-            december: this.getValueWhereProgramStageDataElement(events,"HKCpLpp7GTW","FkiBRijrG2e"),
-            january: this.getValueWhereProgramStageDataElement(events,"HKCpLpp7GTW","sDaCQ6f6YOD"),
-            february: this.getValueWhereProgramStageDataElement(events,"HKCpLpp7GTW","y09y18XbB8k"),
-            march: this.getValueWhereProgramStageDataElement(events,"HKCpLpp7GTW","Ad3q3FDYW1b"),
-            april: this.getValueWhereProgramStageDataElement(events,"HKCpLpp7GTW","sBQRTCsCNUk"),
-            may: this.getValueWhereProgramStageDataElement(events,"HKCpLpp7GTW","SMCMViP3vM8"),
-            june: this.getValueWhereProgramStageDataElement(events,"HKCpLpp7GTW","U0raPYTyV8i"),
-            monitoringIndicator: this.getValueWhereProgramStageDataElement(events,"UmXlNVaVKYU","K3sc76FtKOH"),
-            target: this.getValueWhereProgramStageDataElement(events,"UmXlNVaVKYU","lvQaqAsCWgP"),
-            ta: this.getValueWhereProgramStageDataElement(events,"OEVcANyMWhF","TsZAyGFSYSC"),
-            goods: this.getValueWhereProgramStageDataElement(events,"OEVcANyMWhF","a3I9XB0O6rF"),
-            works: this.getValueWhereProgramStageDataElement(events,"OEVcANyMWhF","ueygYIluJ47"),
-            operational: this.getValueWhereProgramStageDataElement(events,"OEVcANyMWhF","fzi4xRTFfqB"),
-            total_mwk: '',
-            total_usd: '',
-            balance_from_previous_work: this.getValueWhereProgramStageDataElement(events,"OEVcANyMWhF","BliyDpUQOfA"),
-            total_budget_allocation: ''
+            name: _.find(trackedEntityInstance.attributes,['attribute',"srz1mRYjeHC"]).value,
+            q1: this.getValueWhereProgramStageDataElement(events,"BNETYGygsy5","WqOWqihu2t2"),
+            q2: this.getValueWhereProgramStageDataElement(events,"BNETYGygsy5","rrYQpI9jpzr"),
+            q3: this.getValueWhereProgramStageDataElement(events,"BNETYGygsy5","xHetvMjEBZM"),
+            q4: this.getValueWhereProgramStageDataElement(events,"BNETYGygsy5","QF46wE47q9w"),
+            funding: this.getValueWhereProgramStageDataElement(events,"UkOEgATmsPk","hp0TAepDljJ"),
+            monitoringIndicator: this.getValueWhereProgramStageDataElement(events,"JLeQ1IbD4Dw","UIvULEw4rV3"),
+            baseline: this.getValueWhereProgramStageDataElement(events,"JLeQ1IbD4Dw","RblCl2tkr3E"),
+            target: this.getValueWhereProgramStageDataElement(events,"JLeQ1IbD4Dw","ySSIHpWLb87"),
+            achievement: this.getValueWhereProgramStageDataElement(events,"JLeQ1IbD4Dw","P8NOmBNCzah"),
+            responsibility: this.getValueWhereProgramStageDataElement(events,"qkzFmZ2mz8z","C8smLLGQ3gy") +', '+this.getValueWhereProgramStageDataElement(events,"qkzFmZ2mz8z","nUwm9VX1fHz"),
+            donor: this.getValueWhereProgramStageDataElement(events,"Mair6JZp2Ro","DcoPY8fhQ7s") +', '+this.getValueWhereProgramStageDataElement(events,"Mair6JZp2Ro","xk39Lfky3T9"),
         }
     }
 
@@ -221,66 +208,39 @@ class Index extends Component{
                                                                 <table className="table table-sm table-bordered">
                                                                     <thead className="font-weight-bold">
                                                                     <tr>
-                                                                        <th rowSpan="2">Code</th>
-                                                                        <th rowSpan="2" style={{width:"20%"}}>Name</th>
-                                                                        <th rowSpan="2" style={{width:"5%"}}>Responsibility</th>
-                                                                        <th colSpan="12">Time Frame</th>
-                                                                        <th colSpan="2" style={{width:"10%"}}>Output</th>
-                                                                        <th colSpan="6">Budget Estimate</th>
-                                                                        <th rowSpan="2">Balance from Previous Work</th>
-                                                                        <th rowSpan="2">Total Budget Allocation</th>
+                                                                        <th rowSpan="2" style={{width:"30%"}}>Name</th>
+                                                                        <th colSpan="4" style={{width:"30%"}}>Monitoring Indicator</th>
+                                                                        <th colSpan="4" style={{width:"12%"}}>Time Frame</th>
+                                                                        <th rowSpan="2" style={{width:"7%"}}>Funding</th>
+                                                                        <th rowSpan="2" style={{width:"7%"}}>Donor</th>
+                                                                        <th rowSpan="2" style={{width:"7%"}}>Responsibility</th>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th style={{width:"1%"}}>Jul</th>
-                                                                        <th style={{width:"1%"}}>Aug</th>
-                                                                        <th style={{width:"1%"}}>Sept</th>
-                                                                        <th style={{width:"1%"}}>Oct</th>
-                                                                        <th style={{width:"1%"}}>Nov</th>
-                                                                        <th style={{width:"1%"}}>Dec</th>
-                                                                        <th style={{width:"1%"}}>Jan</th>
-                                                                        <th style={{width:"1%"}}>Feb</th>
-                                                                        <th style={{width:"1%"}}>Mar</th>
-                                                                        <th style={{width:"1%"}}>Apr</th>
-                                                                        <th style={{width:"1%"}}>May</th>
-                                                                        <th style={{width:"1%"}}>Jun</th>
-                                                                        <th>Monitoring Indicator</th>
+                                                                        <th>Name</th>
+                                                                        <th>Baseline</th>
                                                                         <th>Target</th>
-                                                                        <th>TA</th>
-                                                                        <th>Goods</th>
-                                                                        <th>Works</th>
-                                                                        <th>Operational</th>
-                                                                        <th>Total(MWK)</th>
-                                                                        <th>Total(USD)</th>
+                                                                        <th>Achievement</th>
+                                                                        <th style={{width:"3%"}}>Q1</th>
+                                                                        <th style={{width:"3%"}}>Q2</th>
+                                                                        <th style={{width:"3%"}}>Q3</th>
+                                                                        <th style={{width:"3%"}}>Q4</th>
                                                                     </tr>
                                                                     </thead>
                                                                     <tbody>
                                                                     {activity.data.map(item => (
                                                                         <tr>
-                                                                            <td>{item.code}</td>
                                                                             <td>{item.name}</td>
-                                                                            <td>{item.responsibility}</td>
-                                                                            <td>{item.july}</td>
-                                                                            <td>{item.august}</td>
-                                                                            <td>{item.september}</td>
-                                                                            <td>{item.october}</td>
-                                                                            <td>{item.november}</td>
-                                                                            <td>{item.december}</td>
-                                                                            <td>{item.january}</td>
-                                                                            <td>{item.february}</td>
-                                                                            <td>{item.march}</td>
-                                                                            <td>{item.april}</td>
-                                                                            <td>{item.may}</td>
-                                                                            <td>{item.june}</td>
                                                                             <td>{item.monitoringIndicator}</td>
+                                                                            <td>{item.baseline}</td>
                                                                             <td>{item.target}</td>
-                                                                            <td>{item.ta}</td>
-                                                                            <td>{item.goods}</td>
-                                                                            <td>{item.works}</td>
-                                                                            <td>{item.operational}</td>
-                                                                            <td>{parseFloat(item.ta)+parseFloat(item.works)+parseFloat(item.goods)+parseFloat(item.operational)}</td>
-                                                                            <td>{Math.round((parseFloat(item.ta)+parseFloat(item.works)+parseFloat(item.goods)+parseFloat(item.operational))/740)}</td>
-                                                                            <td>{parseFloat(item.balance_from_previous_work)}</td>
-                                                                            <td>{Math.round((parseFloat(item.ta)+parseFloat(item.works)+parseFloat(item.goods)+parseFloat(item.operational))/740)+parseFloat(item.balance_from_previous_work)}</td>
+                                                                            <td>{item.achievement}</td>
+                                                                            <td>{item.q1}</td>
+                                                                            <td>{item.q2}</td>
+                                                                            <td>{item.q3}</td>
+                                                                            <td>{item.q4}</td>
+                                                                            <td>{Math.round((parseFloat(item.funding)))}</td>
+                                                                            <td>{item.donor}</td>
+                                                                            <td>{item.responsibility}</td>
                                                                         </tr>
                                                                     ))}
                                                                     </tbody>

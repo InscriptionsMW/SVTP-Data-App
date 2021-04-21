@@ -15,8 +15,8 @@ import MainBody from './components/MainBody';
 import ViewTrackedEntityInstance from './components/ViewTrackedEntityInstance'
 import ListTrackedEntityInstance from './components/ListTrackedEntityInstance'
 import CreateTrackedEntityInstance from './components/CreateTrackedEntityInstance'
-import ProgramDataElements from './components/ProgramDataElements'
 import UpdateTrackedEntityInstance from './components/UpdateTrackedEntityInstance'
+import ProgramDataElements from './components/ProgramDataElements'
 import Master from "./components/Layout/Master";
 import ProgramStages from "./components/ProgramStages";
 import AnnualWorkPlanBudget from "./components/AnnualWorkPlanBudget/Index";

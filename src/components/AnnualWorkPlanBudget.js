@@ -35,27 +35,27 @@ class AnnualWorkPlanBudget extends Component{
         console.log(trackedEntityInstances)
         let components = _.chain(trackedEntityInstances.trackedEntityInstances)
                             .groupBy((item)=> {
-                                return _.find(item.attributes,['attribute', "qsbfO1A8Dvk"]).value
+                                return _.find(item.attributes,['attribute', "XRgRDpeGdvj"]).value
                             })
                             .toPairs()
                             .map(pair => _.zipObject(['name', 'data'], pair))
-                            .map(item => {return {name : item.name, id: "qsbfO1A8Dvk", count: item.data.length}})
+                            .map(item => {return {name : item.name, id: "XRgRDpeGdvj", count: item.data.length}})
                             .value();
         let subComponents = _.chain(trackedEntityInstances.trackedEntityInstances)
                             .groupBy((item)=> {
-                                return _.find(item.attributes,['attribute', "muxUIYNH02G"]).value
+                                return _.find(item.attributes,['attribute', "B3nn1X42fMS"]).value
                             })
                             .toPairs()
                             .map(pair => _.zipObject(['name', 'data'], pair))
-                            .map(item => {return {name : item.name, component : "qsbfO1A8Dvk", id : "muxUIYNH02G", count: item.data.length}})
+                            .map(item => {return {name : item.name, component : "XRgRDpeGdvj", id : "B3nn1X42fMS", count: item.data.length}})
                             .value();
         let activities = _.chain(trackedEntityInstances.trackedEntityInstances)
                             .groupBy((item)=> {
-                                return _.find(item.attributes,['attribute', "JPE7YnmzsL2"]).value
+                                return _.find(item.attributes,['attribute', "uHTPyDNqXRg"]).value
                             })
                             .toPairs()
                             .map(pair => _.zipObject(['name', 'data'], pair))
-                            .map(item => {return {name : item.name, subComponent : "muxUIYNH02G" , data : item.data}})
+                            .map(item => {return {name : item.name, subComponent : "B3nn1X42fMS" , data : item.data}})
                             .value();
 
         components.forEach((component,i) => {
@@ -63,18 +63,16 @@ class AnnualWorkPlanBudget extends Component{
             tempSubComp.forEach((subComponent,j) => {
                 let tempActivities = activities.filter(item => item.subComponent === subComponent.id)
                 tempActivities.forEach((activity,k) => {
-                    let sortedData = _.sortBy(activity.data,obj => {
-                                        return _.find(obj.attributes,['attribute',"KrBo3cCP87C"]).value
-                                    })
+                    let sortedData = activity.data
                     sortedData.forEach((data,l) => {
-                    console.log(_.find(data.attributes,['attribute',"KrBo3cCP87C"]).value)
+
                     tableRenderArray.push({
                         component : (j+k+l) === 0? component.count+"_"+component.name:false,
                         subComponent : (k+l) === 0 && subComponent.component === component.id? subComponent.count+"_"+subComponent.name : false,
                         activity : (l) === 0 && activity.subComponent === subComponent.id? activity.data.length+"_"+activity.name : false,
-                        name :  _.find(data.attributes,['attribute',"cwCu0GzPD9Y"]).value,
-                        description : _.find(data.attributes,['attribute',"ctN9NyGG96X"]).value,
-                        code : _.find(data.attributes,['attribute',"KrBo3cCP87C"]).value
+                        name :  _.find(data.attributes,['attribute',"srz1mRYjeHC"]).value,
+                        description : _.find(data.attributes,['attribute',"Am0HpanQdqk"]).value,
+                        code : ''
                     })
                     })
 

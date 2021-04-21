@@ -1,7 +1,7 @@
 const config = {
     type: 'app',
-    name: 'public-agriculture-activity-tracker',
-    title: 'Public Agriculture Activity Tracker',
+    name: 'data-tracker',
+    title: 'Data Tracker',
 
     entryPoints: {
         app: './src/App',

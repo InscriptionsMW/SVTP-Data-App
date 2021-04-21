@@ -1,4 +1,4 @@
-export const baseUrl = 'https://covmw.com/namistest/api/'
+export const baseUrl = 'https://mis.svtp.gov.mw/svtpmis-dev/api/'
 // export const baseUrl = 'https://svtp.inscriptionsmw.com/svtpmis-dev/api/'
 // export const user ={name:admin}
 export const basicAuth = 'Basic ' + btoa( 'admin:#@Dzungu20_!' );
@@ -7,16 +7,16 @@ export const basicAuth = 'Basic ' + btoa( 'admin:#@Dzungu20_!' );
 export const program = 'Fa4Qu2iKB7G'
 
 //app name
-export const appName = 'Shire Valley Transfomation Program'
+export const appName = 'Shire Valley Transformation Program'
 
 export const moduleConfigs = {
     resultFramework : {
-        orgUnit : 'regABjOxLLQ',
-        show : false
+        orgUnit : 'D4Cp0gQh0tc',
+        show : true
     },
     annualWorkPlanBudget : {
-        program : 'EN8CiFsrq7A',
-        orgUnit : 'regABjOxLLQ',
+        program : 'WWgxaSHL3uV',
+        orgUnit : 'D4Cp0gQh0tc',
         show : true
     }
 }
